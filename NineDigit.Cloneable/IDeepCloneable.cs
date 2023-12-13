@@ -12,7 +12,9 @@ namespace NineDigit.Cloneable
         [return: NotNull]
         new T DeepClone(DeepCloner? deepCloner = null);
 
+#if NETSTANDARD2_1
         object IDeepCloneable.DeepClone(DeepCloner? deepCloner)
             => this.DeepClone(deepCloner);
+#endif
     }
 }

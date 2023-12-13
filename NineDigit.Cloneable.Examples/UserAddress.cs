@@ -17,13 +17,13 @@ class UserAddress : IDeepCloneable<UserAddress>
         // This line must be called before any other cloning
         cloner.Map(address, this);
 
-        this.Street = address.Street;
-        this.City = address.City;
-        this.User = cloner.Clone(address.User);
+        Street = address.Street;
+        City = address.City;
+        User = cloner.Clone(address.User);
     }
-    
-    public string Street { get; set; }
-    public string City { get; set; }
+
+    public string Street { get; set; } = string.Empty;
+    public string City { get; set; } = string.Empty;
     
     public User? User { get; set; }
 

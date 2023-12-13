@@ -17,11 +17,11 @@ class User : IDeepCloneable<User>
         // This line must be called before any other cloning
         cloner.Map(user, this);
         
-        this.Name = user.Name;
-        this.Address = cloner.Clone(user.Address);
+        Name = user.Name;
+        Address = cloner.Clone(user.Address);
     }
-    
-    public string Name { get; set; }
+
+    public string Name { get; set; } = string.Empty;
     public UserAddress? Address { get; set; }
 
     public User DeepClone(DeepCloner? deepCloner = null)

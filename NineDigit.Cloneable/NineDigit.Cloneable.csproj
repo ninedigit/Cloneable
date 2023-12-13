@@ -3,7 +3,7 @@
     <Import Project="..\CreateNuGetPackage.props" />
     
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <LangVersion>10.0</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -13,8 +13,8 @@
         <Title>NineDigit.DeepCloneable</Title>
         <Authors>Tomáš Peťovský</Authors>
         <Company>Nine Digit, s.r.o.</Company>
-        <Version>1.0.0</Version>
-        <PackageVersion>1.0.0</PackageVersion>
+        <Version>1.1.0</Version>
+        <PackageVersion>1.1.0</PackageVersion>
         <Description>Minimalistic library for deep cloning objects.</Description>
         <PackageTags>clone deepclone</PackageTags>
         <PackageProjectUrl>https://github.com/ninedigit/DeepCloneable.git</PackageProjectUrl>
@@ -28,13 +28,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Nullable" Version="1.3.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    
+    <ItemGroup>
         <None Include="README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup>
-<!--        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">-->
-<!--            <_Parameter1>$(AssemblyName).Examples</_Parameter1>-->
-<!--        </AssemblyAttribute>-->
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
             <_Parameter1>$(AssemblyName).Tests</_Parameter1>
         </AssemblyAttribute>
